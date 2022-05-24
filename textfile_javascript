@@ -1,0 +1,11 @@
+function createTextFile(str){
+    var file = new Blob([str])
+        anchor = document.createElement("a")
+    anchor.href = URL.createObjectURL(file)
+    anchor.download = "fileName"
+    anchor.click()
+    URL.revokeObjectURL(anchor.href)
+    anchor.remove()
+}
+
+createTextFile(input)
